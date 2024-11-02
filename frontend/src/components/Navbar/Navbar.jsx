@@ -99,7 +99,7 @@ export default function Navbar({ handleOrderPopup }) {
           <div className="sm:hidden">
             <button
               onClick={toggleMenu}
-              className="text-3xl text-primary dark:text-white"
+              className="text-3xl text-white dark:text-white"
             >
               <FaBars />
             </button>
@@ -141,7 +141,7 @@ export default function Navbar({ handleOrderPopup }) {
             </Link>
             {order.length > 0 ? <Link
               to="/yourorder"
-              className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
+              className="bg-gradient-to-r from-black to-gray-300 transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
             >
               <span className="group-hover:block hidden transition-all duration-200">
                 Order
@@ -176,16 +176,16 @@ export default function Navbar({ handleOrderPopup }) {
             placeholder="search"
             value={inp}
             onChange={(e) => setInp(e.target.value)}
-            className="w-full rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-primary dark:border-gray-500 dark:bg-gray-800"
+            className="w-full rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-black dark:border-gray-500 dark:bg-gray-800"
           />
 
-          {auth.username ? <div className='flex items-center gap-6'><span className='uppercase text-2xl font-bold flex items-center gap-2'> <FaUser className="text-primary dark:text-white text-2xl cursor-pointer" /> {auth.username.name}</span><button className='p-2 rounded-lg bg-primary text-white font-[600]' onClick={handlelogout}>Logout</button></div> : <Link to="/signinsignup" onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-lg bg-primary text-white font-[600]">
+          {auth.username ? <div className='flex items-center gap-6'><span className='uppercase text-2xl font-bold flex items-center gap-2'> <FaUser className="text-black dark:text-white text-2xl cursor-pointer" /> {auth.username.name}</span><button className='p-2 rounded-lg bg-black text-white font-[600]' onClick={handlelogout}>Logout</button></div> : <Link to="/signinsignup" onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-lg bg-black text-white font-[600]">
             Sign In/Sign Up
           </Link>}
           <Link
             to='/cart'
             onClick={() => setIsOpen(!isOpen)}
-            className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3"
+            className="bg-gradient-to-r from-black to-gray-300 transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3"
           >
             Cart
             <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
@@ -193,7 +193,7 @@ export default function Navbar({ handleOrderPopup }) {
           <Link
             to='/wishlist'
             onClick={() => setIsOpen(!isOpen)}
-            className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3"
+            className="bg-gradient-to-r from-black to-gray-300 transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3"
           >
             Wishlist
             <FaHeart className="text-xl text-white drop-shadow-sm cursor-pointer" />
@@ -201,7 +201,7 @@ export default function Navbar({ handleOrderPopup }) {
           <Link
             to='/yourorder'
             onClick={() => setIsOpen(!isOpen)}
-            className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3"
+            className="bg-gradient-to-r from-black to-gray-300 transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3"
           >
             Orders
             <FaBagShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
