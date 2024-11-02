@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import axios from 'axios';
-import backgroundImage from '../../assets/pritam/contact1.jpeg'
+import backgroundImage from '../../assets/pritam/contactpritam4.jpeg'
 import img from '../../assets/pritam/1.png'
 import Testimonials from "../Testimonials/Testimonials";
 
