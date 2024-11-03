@@ -10,13 +10,13 @@ const looks = [
   {
     category: 'CASUAL',
     imgSrc: 'https://static.bershka.net/assets/public/88c1/62f8/534949caa06e/fa67a5c63879/karb______fe8ce3657aa96ac4c29c/karb______fe8ce3657aa96ac4c29c.jpg?ts=1728044442483&t=20241025021705&w=750',
-    link: '/influencer2', // Link for the second image
   },
 ];
 
 function Influencer() {
   return (
-    <div className="container mx-auto px-4 py-8 mb-[150px] -mt-[150px]">
+    <div className='relative bottom-48'>
+    <div className="container mx-auto px-4 py-8">
       {/* Header section */}
       <div className="text-center mb-4">
         <h1 className="text-3xl font-bold">→ GET THE LOOK</h1>
@@ -26,7 +26,7 @@ function Influencer() {
       </div>
 
       {/* Centered grid layout */}
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {looks.map((look, index) => (
             <div key={index} className="relative w-[300px]">
@@ -44,6 +44,7 @@ function Influencer() {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 }

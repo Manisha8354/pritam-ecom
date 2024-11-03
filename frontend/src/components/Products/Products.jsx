@@ -60,7 +60,7 @@ export default function Products() {
   }
 
   return (
-    <div className="relative bottom-56">
+    <div className="relative bottom-48">
       <div className="container">
         {/* Header section */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">

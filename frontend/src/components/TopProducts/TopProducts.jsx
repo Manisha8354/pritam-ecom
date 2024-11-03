@@ -34,7 +34,7 @@ export default function TopProducts({ handleOrderPopup }) {
 
   // Fetching subcategory data
   async function getsubCategory() {
-    let result = await axios.get('https://actl.co.in/suchit/subcategoryget');
+    let result = await axios.get("https://actl.co.in/suchit/subcategoryget");
     setsubCategory(result.data);
   }
 
@@ -43,8 +43,8 @@ export default function TopProducts({ handleOrderPopup }) {
   }, []);
 
   return (
-    <div>
-      <div className="container mx-auto min-h-screen flex flex-col justify-start items-center pt-5">
+    <div className="flex justify-center">
+      <div className="container mx-auto min-h-screen flex flex-col items-center pt-5">
         {/* Header section */}
         <div className="text-center mb-8 flex flex-col justify-center items-center">
           <p data-aos="fade-up" className="text-sm text-black">
@@ -56,25 +56,27 @@ export default function TopProducts({ handleOrderPopup }) {
         </div>
 
         {/* Body section with grid layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 justify-center items-center mt-24"> {/* Added mt-10 to shift the cards down */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 px-5 sm:px-0 justify-center items-center mt-20">
           {subcategory.map((data, index) => (
             <div
-              data-aos="zoom-in"
-              className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group w-[300px]"
+            data-aos="zoom-in"
+            className={`rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group w-full max-w-xs ${
+              index === 1 ? "mt-8" : ""
+            }`}
               key={data.id}
             >
-              {/* image section */}
-              <div className="h-[150px] flex justify-center">
+              {/* Image section */}
+              <div className="h-[130px] flex justify-center">
                 <img
                   src={`https://actl.co.in/suchit_uploads/${data.subcategoryImage}`}
                   alt="product"
-                  className={`block mx-auto transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md rounded-md w-[120px] h-[150px]`}
+                  className="block mx-auto transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md rounded-md w-[170px] h-[170px]"
                 />
               </div>
 
-              {/* details section */}
+              {/* Details section */}
               <div className="p-4 text-center flex flex-col gap-1">
-                {/* star rating */}
+                {/* Star rating */}
                 <div className="w-full flex items-center justify-center gap-2">
                   <FaStar className="text-yellow-500" />
                   <FaStar className="text-yellow-500" />
@@ -86,7 +88,6 @@ export default function TopProducts({ handleOrderPopup }) {
                   {data.description}
                 </p>
 
-              
                 <a
                   href={`/view/${data.categoryName}`}
                   className="bg-gray-500 hover:scale-105 duration-300 text-white py-1 px-4 rounded-full group-hover:bg-white group-hover:text-black"

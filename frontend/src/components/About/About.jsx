@@ -20,7 +20,7 @@ export default function About() {
 
     return (
         <>
-            <div className="min-h-screen lg:h-[80vh] transition-all duration-700 ease-in-out shadow-lg bg-gray-100">
+            <div className="min-h-screen lg:h-[80vh] transition-all duration-700 ease-in-out shadow-lg bg-gray-100 ">
                 <div className="h-32 flex items-center justify-center">
                     <motion.h2
                         initial={{ opacity: 0, y: -20 }}

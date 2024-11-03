@@ -115,7 +115,7 @@ export default function Navbar({ handleOrderPopup }) {
                 value={inp}
                 onChange={(e) => setInp(e.target.value)}
               />
-              {auth.username ? <div className='flex items-center gap-6'><span className='uppercase text-2xl font-bold flex items-center gap-2'> <FaUser className="text-black dark:text-white text-2xl" /> {auth.username.name}</span><button className='p-2 rounded-lg bg-black text-white font-[600]' onClick={handlelogout}>Logout</button></div> : <Link to="/signinsignup" className="p-2 rounded-lg bg-black text-white font-[600]">
+              {auth.username ? <div className='flex items-center gap-6'><span className='uppercase text-xl font-bold flex items-center gap-2 text-white'> <FaUser className="text-white dark:text-white text-2xl" /> {auth.username.name}</span><button className='p-2 rounded-lg bg-black text-white font-[600]' onClick={handlelogout}>Logout</button></div> : <Link to="/signinsignup" className="p-2 rounded-lg bg-black text-white font-[600]">
                 Sign In/Sign Up
               </Link>}
             </div>
@@ -207,6 +207,13 @@ export default function Navbar({ handleOrderPopup }) {
             <FaBagShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
           </Link>
           <Link
+            to='/' // Contact Us link for mobile menu
+            onClick={() => setIsOpen(!isOpen)}
+            className="block px-4 py-2 hover:text-primary duration-200"
+          >
+            Home
+          </Link>
+          <Link
             to='/about'
             onClick={() => setIsOpen(!isOpen)}
             className="block px-4 py-2 hover:text-primary duration-200"
@@ -220,6 +227,7 @@ export default function Navbar({ handleOrderPopup }) {
           >
             Contact Us
           </Link>
+          
         </div>
       </div>
     </div>
